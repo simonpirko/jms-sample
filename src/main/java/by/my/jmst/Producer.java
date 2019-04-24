@@ -15,10 +15,10 @@ public class Producer {
     private JMSContext jmsContext;
 
     @Resource(lookup = "jms/Topic")
-    private Topic queue;
+    private Topic topic;
 
     public void send() {
         JMSProducer producer = jmsContext.createProducer();
-        producer.send(queue, "hello");
+        producer.send(topic, "hello");
     }
 }
