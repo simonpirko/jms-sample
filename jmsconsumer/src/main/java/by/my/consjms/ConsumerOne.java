@@ -1,4 +1,4 @@
-package by.my.jmst;
+package by.my.consjms;
 
 import javax.ejb.MessageDriven;
 import javax.jms.JMSException;
