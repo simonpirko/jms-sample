@@ -3,10 +3,7 @@ package by.my.jmst;
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.jms.JMSConnectionFactory;
-import javax.jms.JMSContext;
-import javax.jms.JMSProducer;
-import javax.jms.Topic;
+import javax.jms.*;
 
 @Stateless
 public class Producer {
@@ -15,7 +12,7 @@ public class Producer {
     private JMSContext jmsContext;
 
     @Resource(lookup = "jms/Topic")
-    private Topic topic;
+    private Destination topic;
 
     public void send() {
         JMSProducer producer = jmsContext.createProducer();
