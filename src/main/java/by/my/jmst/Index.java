@@ -14,6 +14,10 @@ public class Index extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        producer.send();
+        String name = req.getParameter("name");
+        if (name == null) {
+            name = "Guest";
+        }
+        producer.send(name);
     }
 }

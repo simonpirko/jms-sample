@@ -14,8 +14,8 @@ public class Producer {
     @Resource(lookup = "jms/Topic")
     private Destination topic;
 
-    public void send() {
+    public void send(String message) {
         JMSProducer producer = jmsContext.createProducer();
-        producer.send(topic, "hello");
+        producer.send(topic, message);
     }
 }
